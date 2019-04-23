@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+<title>Nur's Blog | All Posts</title> %}
+
+{% block content %}
+  <section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">All the posts are here</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+      
+  <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">
+              <i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="breadcrumb-item active"> Browse Posts</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <div class="container">
+      <div class="card text-center">
+        {% if posts %}
+          {% for post in posts %}
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.body }}</p>
+          </div>
+          <div class="card-footer text-muted">
+            Pbulished by: {{ post.author }} at {{ post.post_time }} 
+          </div>
+          <div class="card-body">
+              <a href="{% url 'post' post.id %}" class="btn btn-primary">More</a>
+          </div>
+          <hr>
+          <br>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            No Posts Are Available
+          </div>
+        {% endif %}
+      </div>
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            {% if posts.has_other_pages %}
+              <ul class="pagination">
+                {% if posts.has_previous %}
+                  <li class="page-item">
+                    <a href="?page={{posts.previous_page_number}}" class="page-link">&laquo;</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled">
+                    <a class="page-link">&laquo;</a>
+                  </li>
+                {% endif %}
+                {% for i in posts.paginator.page_range %}
+                  {% if posts.number == i %}
+                    <li class="page-item active">
+                      <a class="page-link">{{i}}</a>
+                    </li>
+                  {% else %}
+                    <li class="page-item">
+                      <a href="?page={{i}}" class="page-link">{{i}}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+                {% if posts.has_next %}
+                  <li class="page-item">
+                    <a href="?page={{posts.next_page_number}}" class="page-link">&raquo;</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled">
+                    <a class="page-link">&raquo;</a>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+  </div>
+{% endblock %}
