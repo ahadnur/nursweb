@@ -38,6 +38,15 @@
         >
             <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
+        <li
+          {% if 'programming' in request.path %}
+            class="nav-item active mr-3"
+          {% else %}
+            class="nav-item mr-3"
+          {% endif %}
+        >
+            <a class="nav-link" href="{% url 'programming' %}">Programming</a>
+        </li>
       </ul>
 
       <!-- <ul class="navbar-nav ml-auto">
