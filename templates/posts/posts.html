@@ -34,17 +34,18 @@
         {% if posts %}
           {% for post in posts %}
           <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
+              <div class="card-header">
+                  <h5 class="card-title">{{ post.title }}</h5>
+              </div>
             <p class="card-text">{{ post.body }}</p>
           </div>
           <div class="card-footer text-muted">
             Pbulished by: {{ post.author }} at {{ post.post_time }} 
           </div>
           <div class="card-body">
-              <a href="{% url 'post' post.id %}" class="btn btn-primary">More</a>
+              <a href="{% url 'post' post.id %}" class="btn btn-primary">Go for more discussion</a>
           </div>
           <hr>
-          <br>
           {% endfor %}
         {% else %}
           <div class="col-md-12">
