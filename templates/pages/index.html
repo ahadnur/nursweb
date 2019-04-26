@@ -3,35 +3,35 @@
 {% block title %} Home{% endblock %}
 
 {% block content %}
-  <section id="showcase-inner" class="py-5 text-white">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12">
-            <h1 class="display-4">Sharing of Ideas and Thoughts</h1>
-            <p class="lead"></p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="container">
+     <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">A Warm Welcome To Nur's Blog!</h1>
+      <p class="lead"></p>
+    </header>
+  </div>
+
   <!-- Listings -->
   <div class="container">
-      <div class="card text-center">
-        {% if posts %}
-          {% for post in posts %}
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.body }}</p>
-            <a href="{% url 'post' post.id %}" class="btn btn-primary">More</a>
-          </div>
-          <div class="card-footer text-muted">
-            Published by: {{ post.author }} on {{ post.post_time }} 
-          </div>
-          <hr>
-          <br>
-          {% endfor %}
-        {% else %}
-          <P>No posts are available</P>
-        {% endif %}
+      <div class="col-ml-8">
+        <div class="card text-center">
+          {% if posts %}
+            {% for post in posts %}
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.body }}</p>
+              <a href="{% url 'post' post.id %}" class="btn btn-primary">More</a>
+            </div>
+            <div class="card-footer text-muted">
+              Published by: {{ post.author }} on {{ post.post_time }} 
+            </div>
+            <hr>
+            <br>
+            {% endfor %}
+          {% else %}
+            <P>No posts are available</P>
+          {% endif %}
+        </div>
       </div>
   </div>
 {% endblock %}
