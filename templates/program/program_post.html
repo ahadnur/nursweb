@@ -23,7 +23,7 @@
               <i class="fas fa-home"></i> Home</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{% url 'programming' %}">Browse Programming Posts</a>
+            <a href="{% url 'programming' %}">Programming Posts</a>
           </li>
           <li class="breadcrumb-item active"> {{ program.title }}</li>
         </ol>
@@ -38,13 +38,12 @@
             <h5 class="card-title">{{ program.title }}</h5>
             <p class="card-text">{{ program.body }}</p>
           </div>
-          <div class="card-f  ooter text-muted">
-            Posted by: {{ program.author }} on {{ program.date }} 
+          <div class="card-footer text-muted">
+            Posted by: {{ program.author }} on {{ program.date }}
+            <br>
           </div>
-
-          <hr>
-          <br>
       </div>
+      <br>
   </div>
   <div class="container">
     <div id="disqus_thread"></div>

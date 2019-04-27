@@ -33,17 +33,16 @@
 
   <!-- Listings -->
   <div class="container"> 
-      <div class="card text-center">
-          <div class="card-body"> 
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.body }}</p>
-          </div>
-          <div class="card-f  ooter text-muted">
-            Posted by: {{ post.author }} on {{ post.post_time }} 
-          </div>
-          <hr>
-          <br>
-      </div>
+    <div class="card text-center">
+        <div class="card-body"> 
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.body }}</p>
+        </div>
+        <div class="card-footer text-muted">
+          Posted by: {{ post.author }} on {{ post.post_time }} 
+        </div>
+        <br>
+    </div>
   </div>
   <div class="container">
     <div id="disqus_thread"></div>

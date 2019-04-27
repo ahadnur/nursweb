@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1 class="display-4">All the programming posts are here</h1>
+          <h1 class="display-4">All the programming posts are here!</h1>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
             <a href="{% url 'index' %}">
               <i class="fas fa-home"></i> Home</a>
           </li>
-          <li class="breadcrumb-item active"> Browse Programming Posts</li>
+          <li class="breadcrumb-item active"> Programming Posts</li>
         </ol>
       </nav>
     </div>
@@ -33,19 +33,19 @@
       <div class="card text-center">
         {% if programs %}
           {% for program in programs %}
-          <div class="card-body">
-              <div class="card-header">
-                  <h5 class="card-title">{{ program.title }}</h5>
+            <div class="card-body">
+                <div class="card-header">
+                    <h5 class="card-title">{{ program.title }}</h5>
+                </div>
+              <p class="card-text">{{ program.body }}</p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted by: {{ program.author }} on {{ program.date }} 
+              <div class="card-body">
+                  <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
+                  <hr>
               </div>
-            <p class="card-text">{{ program.body }}</p>
-          </div>
-          <div class="card-footer text-muted">
-            Posted by: {{ program.author }} on {{ program.date }} 
-          </div>
-          <div class="card-body">
-              <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
-          </div>
-          <hr>
+            </div>
           {% endfor %}
         {% else %}
           <div class="col-md-12">
