@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Program
+from .models import Program, Python
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 
@@ -22,3 +22,23 @@ def programming_post(request, program_id):
         'program': program
     }
     return render(request, 'program/program_post.html', context)
+
+
+def python(request):
+    pythons = Python.objects.order_by('-date').filter(is_published=True)
+    paginator = Paginator(pythons, 3)
+    page = request.GET.get('page')
+    paged_programs = paginator.get_page(page)
+
+    context = {
+        'pythons': paged_programs
+    }
+    return render(request, 'python/python_posts.html', context)
+
+
+def python_post(request, python_id):
+    post = get_object_or_404(Python, pk=python_id)
+    context = {
+        'post': post
+    }
+    return render(request, 'python/python_post.html', context)
