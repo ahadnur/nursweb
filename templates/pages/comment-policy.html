@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Comment Policy{% endblock %}
+
+{% block content %}
+  <section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">কমেন্ট পলিসি</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+      
+  <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">
+              <i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="breadcrumb-item active"> Comment Policy</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+<!-- Listings -->
+<div class="container">
+    <div class="card text-center">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">১। প্রাসঙ্গিকতা বজায় রাখুন।</li>
+                <li class="list-group-item list-group-item-success">২। গঠন মূলক মন্তব্য করুণ।</li>
+                <li class="list-group-item list-group-item-success">৩। কমেন্টে ইংরেজি হরফে বাংলা লিখবেন না।</li>
+                <li class="list-group-item list-group-item-danger">৪। বিব্রতকর মন্তব্যকারীকে ব্যান করা হবে।</li>
+            </ul> 
+    </div>
+</div>
+
+<br>
+{% endblock %}

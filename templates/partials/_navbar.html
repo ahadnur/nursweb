@@ -10,37 +10,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav">
-        <li
-          {% if '/' == request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
-          <a class="nav-link" href="{% url 'index' %}">Home</a>
-        </li>
-        <li
-          {% if 'posts' in request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
-          <a class="nav-link" href="{% url 'posts' %}">Posts</a>
-        </li>
-        
-        <li
-          {% if 'programming' in request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
-            <a class="nav-link" href="{% url 'programming' %}">Programming</a>
-        </li>
-      </ul>
-
       <!-- <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
           <a class="nav-link" href="register.html">
@@ -54,6 +23,34 @@
         </li>
       </ul> -->
         <ul class="navbar-nav ml-auto">
+            <li
+            {% if '/' == request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+          >
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+          </li>
+          <li
+            {% if 'posts' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+          >
+            <a class="nav-link" href="{% url 'posts' %}">Posts</a>
+          </li>
+          
+          <li
+            {% if 'programming' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+          >
+              <a class="nav-link" href="{% url 'programming' %}">Programming</a>
+          </li>
           <li
           {% if 'about' in request.path %}
             class="nav-item active mr-3"

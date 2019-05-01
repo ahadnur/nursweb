@@ -10,3 +10,7 @@ def index(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+
+def comment_policy(request):
+    return render(request, 'pages/comment-policy.html')
