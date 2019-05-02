@@ -32,36 +32,40 @@
 
   <!-- Listings -->
   <div class="container">
-      <div class="card text-center">
-          
-        {% if programs %}
-          {% for program in programs %}
-            <div class="card-body">
-                <div class="card-header">
-                    <h5 class="card-title">{{ program.title }}</h5>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="card text-center">
+                {% if programs %}
+                  {% for program in programs %}
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ program.title }}</h5>
+                        </div>
+                      <p class="card-text">{{ program.body }}</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                      Posted by: {{ program.author }} on {{ program.date | timesince }} 
+                      <div class="card-body">
+                          <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
+                          <hr>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% else %}
+                <div class="card-body">
+                    <h5 class="card-title">
+                        No Posts Available!
+                    </h5>
                 </div>
-              <p class="card-text">{{ program.body }}</p>
-            </div>
-            <div class="card-footer text-muted">
-              Posted by: {{ program.author }} on {{ program.date | timesince }} 
-              <div class="card-body">
-                  <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
-                  <hr>
+                {% endif %}
               </div>
-            </div>
-          {% endfor %}
-        {% else %}
-        <div class="card-body">
-            <h5 class="card-title">
-                No Posts Available!
-            </h5>
         </div>
-        {% endif %}
-      </div>
+    </div>
   </div>
+  <br>
   <div class="container">
       <div class="row">
-          <div class="col-md-12">
+          <div class="col-lg-8 col-md-10 mx-auto">
             {% if programs.has_other_pages %}
               <ul class="pagination">
                 {% if programs.has_previous %}

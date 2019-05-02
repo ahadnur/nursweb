@@ -33,18 +33,22 @@
   </section>
 
   <!-- Listings -->
-  <div class="container"> 
-      <div class="card text-center">
-          <div class="card-body"> 
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text">{{ post.body }}</p>
-          </div>
-          <div class="card-footer text-muted">
-            Posted by: {{ post.author }} on {{ post.date | timesince}}
-            <br>
-          </div>
-      </div>
-      <br>
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="card text-center">
+                <div class="card-body"> 
+                  <h5 class="card-title">{{ post.title }}</h5>
+                  <p class="card-text">{{ post.body }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                  Posted by: {{ post.author }} on {{ post.date | timesince}}
+                  <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
   </div>
   <br>
   <div class="container">
