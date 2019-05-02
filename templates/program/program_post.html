@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+
 
 {% block title %} Programming Posts{% endblock %}
 
@@ -39,7 +41,7 @@
             <p class="card-text">{{ program.body }}</p>
           </div>
           <div class="card-footer text-muted">
-            Posted by: {{ program.author }} on {{ program.date }}
+            Posted by: {{ program.author }} on {{ program.date | timesince }}
             <br>
           </div>
       </div>

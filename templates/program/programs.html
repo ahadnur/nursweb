@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+
 
 {% block title %} Programming{% endblock %}
 
@@ -41,7 +43,7 @@
               <p class="card-text">{{ program.body }}</p>
             </div>
             <div class="card-footer text-muted">
-              Posted by: {{ program.author }} on {{ program.date }} 
+              Posted by: {{ program.author }} on {{ program.date | timesince }} 
               <div class="card-body">
                   <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
                   <hr>

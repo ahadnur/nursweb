@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+
 
 {% block title %} Python{% endblock %}
 
@@ -40,7 +42,7 @@
               <p class="card-text">{{ post.body }}</p>
             </div>
             <div class="card-footer text-muted">
-              Posted by: {{ post.author }} on {{ post.date }} 
+              Posted by: {{ post.author }} on {{ post.date | timesince}} 
               <div class="card-body">
                   <a href="{% url 'python_post' post.id %}" class="btn btn-primary">Go for more discussion</a>
                   <hr>

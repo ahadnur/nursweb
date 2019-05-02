@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block title %} Home{% endblock %}
 
@@ -37,7 +38,7 @@
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="card-text">{{ post.body }}</p>
                 <div class="card-footer text-muted">
-                  Posted by: {{ post.author }} on {{ post.post_time }} 
+                  Posted by: {{ post.author }} on {{ post.post_time | timesince }}
                   <div class="card-body">
                       <a href="{% url 'post' post.id %}" class="btn btn-primary">Go for more discussion</a>
                       <hr>
