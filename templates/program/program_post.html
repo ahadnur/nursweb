@@ -40,10 +40,12 @@
             <div class="card text-center">
                 <div class="card-body"> 
                   <h5 class="card-title"><b>{{ program.title }}</b></h5>
-                  <p class="card-text">{{ program.body | safe }}</p>
+                  <div align="justify">
+                    <p class="card-text">{{ program.body | safe }}</p>
+                  </div>
                 </div>
                 <div class="card-footer text-muted">
-                  Posted by: {{ program.author }} on {{ program.date | timesince }}
+                  {{ program.author }} posted {{ program.date | timesince }} ago.
                   <br>
                 </div>
             </div>

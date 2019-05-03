@@ -41,10 +41,12 @@
                         <div class="card-header">
                           <h5 class="card-title"><b>{{ program.title }}</b></h5>
                         </div>
-                      <p class="card-text">{{ program.body | safe }}</p>
+                        <div align="justify">
+                          <p class="card-text">{{ program.body | safe }}</p>
+                        </div>
                     </div>
                     <div class="card-footer text-muted">
-                      Posted by: {{ program.author }} on {{ program.date | timesince }} 
+                      {{ program.author }} posted {{ program.date | timesince }} ago.
                       <div class="card-body">
                           <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
                           <hr>
