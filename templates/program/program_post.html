@@ -40,7 +40,7 @@
             <div class="card text-center">
                 <div class="card-body"> 
                   <h5 class="card-title"><b>{{ program.title }}</b></h5>
-                  <p class="card-text">{{ program.body }}</p>
+                  <p class="card-text">{{ program.body | safe }}</p>
                 </div>
                 <div class="card-footer text-muted">
                   Posted by: {{ program.author }} on {{ program.date | timesince }}
