@@ -38,9 +38,7 @@
                 {% if programs %}
                   {% for program in programs %}
                     <div class="card-body">
-                        <div class="card-header">
                           <h5 class="card-title"><b>{{ program.title }}</b></h5>
-                        </div>
                         <div align="justify">
                           <p class="card-text">{{ program.body | safe }}</p>
                         </div>

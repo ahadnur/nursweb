@@ -38,12 +38,10 @@
               {% if posts %}
                 {% for post in posts %}
                   <div class="card-body">
-                    <div class="card-header">
-                        <h5 class="card-title"><b>{{ post.title }}</b></h5>
-                    </div>
-                    <div align="justify">
-                      <p class="card-text">{{ post.body | safe }}</p>
-                    </div>
+                      <h5 class="card-title"><b>{{ post.title }}</b></h5>
+                      <div align="justify">
+                        <p class="card-text">{{ post.body | safe }}</p>
+                      </div>
                   </div>
                   <div class="card-footer text-muted">
                     {{ post.author }} posted {{ post.post_time | timesince}} ago.
