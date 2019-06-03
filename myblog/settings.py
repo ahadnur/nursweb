@@ -1,4 +1,4 @@
-# import django_heroku
+import django_heroku
 
 """
 Django settings for myblog project.
@@ -130,4 +130,4 @@ STATICFILES_DIRS = [
 ]
 
 # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
