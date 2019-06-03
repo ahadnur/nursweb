@@ -49,7 +49,6 @@
                       {{ program.author }} posted {{ program.date | timesince }} ago.
                       <div class="card-body">
                           <a href="{% url 'programming_post' program.id %}" class="btn btn-primary">Go for more discussion</a>
-                          <hr>
                       </div>
                     </div>
                   {% endfor %}
