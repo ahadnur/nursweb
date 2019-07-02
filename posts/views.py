@@ -3,9 +3,10 @@ from posts.models import Post
 from programming.models import Program
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
+
 def index(request):
     posts = Post.objects.order_by('-post_time').filter(is_published=True)
-    
+
     paginator = Paginator(posts, per_page=3)
     page = request.GET.get('page')
     paged_posts = paginator.get_page(page)
