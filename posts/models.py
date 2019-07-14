@@ -10,7 +10,7 @@ class Post(models.Model):
     is_published = models.BooleanField(default=True)
 
     def body_preview(self):
-        return self.body[:500]
+        return self.body[:350]
 
     def __str__(self):
         return self.title
