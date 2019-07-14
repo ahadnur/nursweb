@@ -10,6 +10,9 @@ class Program(models.Model):
     date = models.DateTimeField(default=datetime.now, blank=True)
     is_published = models.BooleanField(default=True)
 
+    def body_preview(self):
+        return self.body[:350]
+
     def __str__(self):
         return self.title
 
@@ -20,6 +23,9 @@ class Python(models.Model):
     body = models.TextField()
     date = models.DateTimeField(default=datetime.now, blank=True)
     is_published = models.BooleanField(default=True)
+
+    def body_preview(self):
+        return self.body[:350]
 
     def __str__(self):
         return self.title
