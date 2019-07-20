@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'problem.apps.ProblemConfig',
     'pages.apps.PagesConfig',
     'posts.apps.PostsConfig',
     'programming.apps.ProgrammingConfig',
