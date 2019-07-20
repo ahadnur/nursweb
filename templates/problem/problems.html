@@ -35,6 +35,13 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="card text-center">
+                <div class="card-body">
+                    <span>You can add as many problems you want.</span><br><br>
+                    <a class="btn btn-success" href="{% url 'add_problem' %}">Add a problem</a>
+                </div>
+            </div>
+            <br>
+            <div class="card text-center">
                 {% if problems %}
                 {% for problem in problems %}
                 <div class="card-body">
