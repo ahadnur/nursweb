@@ -38,7 +38,7 @@
 
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_table }}
+        {{ form.as_p }}
         <a href="{% url 'problems' %}"><button type="submit" class="btn btn-success">Add a problem</button></a>
     </form>
 
