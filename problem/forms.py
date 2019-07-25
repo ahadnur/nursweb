@@ -9,4 +9,9 @@ class ProblemForm(forms.ModelForm):
         """Meta definition for Problemform."""
 
         model = Problem
-        fields = ('title', 'body', 'problem_setter',)
+        fields = ['title', 'body', 'problem_setter']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
+            'problem_setter': forms.TextInput(attrs={'class': 'form-control'})
+        }

@@ -18,8 +18,8 @@ def index(request):
     return render(request, 'problem/problems.html', context)
 
 
-def problem(request, problem_id):
-    problem = get_object_or_404(Problem, pk=problem_id)
+def problem(request, slug_text):
+    problem = get_object_or_404(Problem, slug=slug_text)
     context = {
         'problem': problem
     }

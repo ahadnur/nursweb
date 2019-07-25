@@ -36,8 +36,8 @@ def python(request):
     return render(request, 'python/python_posts.html', context)
 
 
-def python_post(request, python_id):
-    post = get_object_or_404(Python, pk=python_id)
+def python_post(request, slug_text):
+    post = get_object_or_404(Python, slug=slug_text)
     context = {
         'post': post
     }

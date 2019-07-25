@@ -53,7 +53,7 @@
                 <div class="card-footer text-muted">
                     {{ problem.problem_setter }} set the problem {{ problem.time | timesince}} ago.
                     <div class="card-body">
-                        <a href="{% url 'problem' problem.id %}" class="btn btn-primary">বিস্তারিত</a>
+                        <a href="{% url 'problem' problem.slug %}" class="btn btn-primary">বিস্তারিত</a>
                     </div>
                 </div>
                 {% endfor %}
