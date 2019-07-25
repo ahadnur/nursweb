@@ -44,7 +44,7 @@
         <div class="card-footer text-muted">
           {{ post.author }} posted {{ post.post_time | timesince }} ago.
           <div class="card-body">
-            <a href="{% url 'post' post.id %}" class="btn btn-primary">বিস্তারিত</a>
+            <a href="{% url 'post' post.slug %}" class="btn btn-primary">বিস্তারিত</a>
           </div>
         </div>
         {% endfor %}
