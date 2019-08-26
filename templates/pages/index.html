@@ -1,14 +1,12 @@
-{% extends 'base.html' %}
-{% load humanize %}
-
-{% block title %} Home{% endblock %}
-
+{% extends 'base.html' %} 
+{% load humanize %} 
+{% block title %} Home{%endblock%}
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
-        <h1 class="display-4">Welcome To Dumb's Blog!</h1>
+        <h1 class="display-4">Welcome To Psycoder's Blog!</h1>
       </div>
     </div>
   </div>
@@ -20,8 +18,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="{% url 'index' %}">
-            <i class="fas fa-home"></i> Home</a>
+          <a href="{% url 'index' %}"> <i class="fas fa-home"></i> Home</a>
         </li>
       </ol>
     </nav>
@@ -33,10 +30,11 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="card text-center">
-        {% if posts %}
-        {% for post in posts %}
+        {% if posts %} {% for post in posts %}
         <div class="card-body">
-          <h5 class="card-title"><b>{{ post.title }}</b></h5>
+          <h5 class="card-title">
+            <b>{{ post.title }}</b>
+          </h5>
           <div align="justify">
             <p class="card-text">{{ post.body_preview | safe }} ...</p>
           </div>
@@ -44,18 +42,19 @@
         <div class="card-footer text-muted">
           {{ post.author }} posted {{ post.post_time | timesince }} ago.
           <div class="card-body">
-            <a href="{% url 'post' post.slug %}" class="btn btn-primary">বিস্তারিত</a>
+            <a href="{% url 'post' post.slug %}" class="btn btn-primary"
+              >বিস্তারিত</a
+            >
           </div>
         </div>
-        {% endfor %}
-        {% else %}
+        {% endfor %} {% else %}
         <P>No posts are available</P>
         {% endif %}
       </div>
     </div>
   </div>
 </div>
-<br>
+<br />
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
@@ -63,27 +62,28 @@
       <ul class="pagination">
         {% if posts.has_previous %}
         <li class="page-item">
-          <a href="?page={{posts.previous_page_number}}" class="page-link">&laquo;</a>
+          <a href="?page={{ posts.previous_page_number }}" class="page-link"
+            >&laquo;</a
+          >
         </li>
         {% else %}
         <li class="page-item disabled">
           <a class="page-link">&laquo;</a>
         </li>
-        {% endif %}
-        {% for i in posts.paginator.page_range %}
+        {% endif %} {% for i in posts.paginator.page_range %} 
         {% if posts.number == i %}
         <li class="page-item active">
-          <a class="page-link">{{i}}</a>
+          <a class="page-link">{{ i }}</a>
         </li>
         {% else %}
         <li class="page-item">
-          <a href="?page={{i}}" class="page-link">{{i}}</a>
+          <a href="?page={{ i }}" class="page-link">{{ i }}</a>
         </li>
-        {% endif %}
-        {% endfor %}
-        {% if posts.has_next %}
+        {% endif %} {% endfor %} {% if posts.has_next %}
         <li class="page-item">
-          <a href="?page={{posts.next_page_number}}" class="page-link">&raquo;</a>
+          <a href="?page={{ posts.next_page_number }}" class="page-link"
+            >&raquo;</a
+          >
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -94,6 +94,6 @@
       {% endif %}
     </div>
   </div>
-  <br>
+  <br />
 </div>
 {% endblock %}
