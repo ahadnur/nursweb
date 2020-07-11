@@ -10,3 +10,6 @@ urlpatterns = [
 ]
 
 handler404 = 'pages.views.error_404_view'
+handler404 = 'posts.views.error_404_view'
+handler404 = 'programming.views.error_404_view'
+handler404 = 'problem.views.error_404_view'

@@ -35,3 +35,7 @@ def add_problem(request):
     else:
         form = ProblemForm()
     return render(request, 'problem/add_problem.html', {'form': form})
+
+
+def error_404_view(request, exception):
+    return render(request, '404.html')

@@ -42,3 +42,6 @@ def python_post(request, slug_text):
         'post': post
     }
     return render(request, 'python/python_post.html', context)
+
+def error_404_view(request, exception):
+    return render(request, '404.html')
