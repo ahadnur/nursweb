@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Error 404</title>
+</head>
+<body>
+    <div class="error">
+        <h1 class="error-title">Page Not Found <span>Error 404</span></h1>
+        <p class="error-text">You Entered an invalid URL</p>
+        <a class="err-btn" href="{% url 'index' %}">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -21,3 +21,7 @@ def about(request):
 
 def comment_policy(request):
     return render(request, 'pages/comment-policy.html')
+
+
+def error_404_view(request, exception):
+    return render(request, '404.html')

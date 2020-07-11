@@ -8,3 +8,5 @@ urlpatterns = [
     path('programming/', include('programming.urls')),
     path('problems/', include('problem.urls')),
 ]
+
+handler404 = 'pages.views.error_404_view'

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 .btn-secondary {
   color: #fff !important; }
 
@@ -82,7 +84,45 @@ pre {
   padding: 6rem 0; }
 
 .listing-preview a {
-  position: relative; }
+  position: relative;
+}
+
+/* Error page */
+.error{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+.error .error-title{
+  color: #2c3e50;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.error .error-title span{
+  color: #e74c3c;
+}
+
+.error .error-text{
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 3px;
+}
+
+.error .err-btn{
+  text-decoration: none;
+  color: white;
+  background: #1abc9c;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px #16a085;
+}
+
 
 @media (max-width: 991px) {
   #showcase {
